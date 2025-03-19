@@ -1,24 +1,33 @@
 # IoT_DISCO-F746NG_WITH_SENSORS_PROJ03_UNIVERSITY
 
-Projekt obejmuje testowanie czujników IoT podłączonych do płytki DISCO-F746NG oraz ich programowanie.   
-W ramach projektu zostaną podłączone różne czujniki komunikujące się przez magistrale I2C i SPI,   
-a następnie przeprowadzona zostanie ich konfiguracja oraz odczyt danych.   
-Projekt ma na celu sprawdzenie poprawności działania czujników oraz ich integrację z mikrokontrolerem.  
+Projekt obejmuje:  
+1. testowanie czujników IoT podłączonych do płytki DISCO-F746NG oraz ich programowanie
+2. budowę komunikacji typu klient-serwer przy użyciu gniazd sieciowych
+   
+Celem projektu jest integracja czujników z mikrokontrolerem i wykorzystanie ich do pomiaru temperatury i ciśnienia.      
+W celu rozszerzenia funkcjonalności zaimplementowano mechanizm serwera TCP,     
+który został zmodyfikowany tak, aby użytkownik połączony z serwerem otrzymywał informację o temperaturze i ciśnieniu.  
+Wartości te pobierane są z czujników.  
 
-Konfiguracja:  
-1. Podłączenie czujników do odpowiednich pinów magistrali I2C/SPI na płytce DISCO-F746NG  
-2. Implementacja kodu obsługującego komunikację i odczyt danych  
-3. Testowanie poprawności działania poprzez wyświetlanie wyników na terminalu lub ekranie LCD
+Zakres projektu:  
+Podłączenie różnych czujników komunikujących się przez magistrale I2C i SPI(wykorzystam I2C).
+Konfiguracja czujników i odczyt danych.
+Testowanie działania poprzez wyświetlanie wyników na stronie www na localhost.
 
-Wymagania:  
-Płytka DISCO-F746NG  
-Kompilator Mbed OS  
-Biblioteki: BSP_DISCO_F746NG, EthernetInterface.h, mbed.h  
-Czujniki obsługujące komunikację I2C/SPI  (pomiar temperatury i ciśnienia)
+Sprzęt:  
+Płytka: DISCO-F746NG    
+Czujniki: STLM75, LPS331AP (wbudowane na płytce NUCLEO nałożonej na DISCO) 
+Kompilator: Mbed OS  (Keil Studio Online)
+Skrętka 
+Router
 
-Projekt obejmuje testowanie czujników IoT podłączonych do płytki DISCO-F746NG oraz ich programowanie.   
-W ramach projektu zostaną podłączone różne czujniki komunikujące się przez magistrale I2C i SPI,   
-a następnie przeprowadzona zostanie ich konfiguracja oraz odczyt danych. Projekt ma na celu sprawdzenie poprawności działania czujników oraz ich integrację z mikrokontrolerem.  
+Biblioteki:  
+BSP_DISCO_F746NG  
+EthernetInterface.h  
+mbed.h  
+
+Gdy uruchomiono, trzeba sprawdzić IP płytki(po połączeniu się do wifi w które jest ona wpięta): nmap -sn 192.168.1.0/24    
+Gdy sprawdzono IP płytki, można w przeglądarce wpisac je i będzie widoczna podstawiona strona www    
 
 
 
